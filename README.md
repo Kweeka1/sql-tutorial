@@ -57,9 +57,10 @@ Clone this repository to your desired folder:
 
 ### Usage
 
-To use postgresql, you need to connect to it with a username.
-By default postgresql provides you a user called 'postgres' with password 'postgres'.
-But it's recommended if you create a new user using that default account:
+To use postgresql, you need to establish a connection to PostgreSQL local server with a user name and password.
+By default, PostgreSQL comes with a built-in user called 'postgres' and a password of 'postgres'.
+But it is recommended that you create a new user using this default account for security reasons. 
+This will ensure that you have a separate user with different privileges and permissions that can be used to connect to the database.
 
 1. Create a new user (optional)
 
