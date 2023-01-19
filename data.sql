@@ -41,3 +41,136 @@ UPDATE animals SET owner_id = 4 WHERE name = 'Squirtle';
 UPDATE animals SET owner_id = 4 WHERE name = 'Blossom';
 UPDATE animals SET owner_id = 5 WHERE name = 'Angemon';
 UPDATE animals SET owner_id = 5 WHERE name = 'Boarmon';
+
+INSERT INTO vets VALUES (DEFAULT, 'William Tatcher', 45, '2000-04-23'),
+                        (DEFAULT, 'Maisy Smith', 26, '2019-01-17'),
+                        (DEFAULT, 'Stephanie Mendez', 64, '1981-05-04'),
+                        (DEFAULT, 'Jack Harkness', 38, '2008-06-08');
+
+INSERT INTO specializations
+VALUES ((SELECT id FROM vets WHERE name = 'William Tatcher'), (SELECT id FROM species WHERE name = 'Pokemon')),
+       ((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Pokemon')),
+       ((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Digimon')),
+       ((SELECT id FROM vets WHERE name = 'Jack Harkness'), (SELECT id FROM species WHERE name = 'Digimon'));
+
+-- Agumon visited William Tatcher on May 24th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-05-24' FROM animals animal
+JOIN vets vet ON vet.name = 'William Tatcher'
+WHERE animal.Name = 'Agumon';
+
+-- Agumon visited Stephanie Mendez on Jul 22th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-07-22' FROM animals animal
+JOIN vets vet ON vet.name = 'Stephanie Mendez'
+WHERE animal.Name = 'Agumon';
+
+-- Gabumon visited Jack Harkness on Feb 2nd, 2021.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2021-02-02' FROM animals animal
+JOIN vets vet ON vet.name = 'Jack Harkness'
+WHERE animal.Name = 'Gabumon';
+
+-- Pikachu visited Maisy Smith on Jan 5th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-01-05' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Pikachu';
+
+-- Pikachu visited Maisy Smith on Mar 8th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-03-08' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Pikachu';
+
+-- Pikachu visited Maisy Smith on May 14th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-05-14' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Pikachu';
+
+-- Devimon visited Stephanie Mendez on May 4th, 2021.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2021-05-04' FROM animals animal
+JOIN vets vet ON vet.name = 'Stephanie Mendez'
+WHERE animal.Name = 'Devimon';
+
+-- Charmander visited Jack Harkness on Feb 24th, 2021.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2021-02-24' FROM animals animal
+JOIN vets vet ON vet.name = 'Jack Harkness'
+WHERE animal.Name = 'Charmander';
+
+-- Plantmon visited Maisy Smith on Dec 21st, 2019.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2019-12-21' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Plantmon';
+
+-- Plantmon visited William Tatcher on Aug 10th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-08-10' FROM animals animal
+JOIN vets vet ON vet.name = 'William Tatcher'
+WHERE animal.Name = 'Plantmon';
+
+-- Plantmon visited Maisy Smith on Apr 7th, 2021.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2021-04-07' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Plantmon';
+
+-- Squirtle visited Stephanie Mendez on Sep 29th, 2019.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2019-09-29' FROM animals animal
+JOIN vets vet ON vet.name = 'Stephanie Mendez'
+WHERE animal.Name = 'Squirtle';
+
+-- Angemon visited Jack Harkness on Oct 3rd, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-10-03' FROM animals animal
+JOIN vets vet ON vet.name = 'Jack Harkness'
+WHERE animal.Name = 'Angemon';
+
+-- Angemon visited Jack Harkness on Nov 4th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-11-04' FROM animals animal
+JOIN vets vet ON vet.name = 'Jack Harkness'
+WHERE animal.Name = 'Angemon';
+
+-- Boarmon visited Maisy Smith on Jan 24th, 2019.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2019-01-24' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Boarmon';
+
+-- Boarmon visited Maisy Smith on May 15th, 2019.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2019-05-15' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Boarmon';
+
+-- Boarmon visited Maisy Smith on Feb 27th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-02-27' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Boarmon';
+
+-- Boarmon visited Maisy Smith on Aug 3rd, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-08-03' FROM animals animal
+JOIN vets vet ON vet.name = 'Maisy Smith'
+WHERE animal.Name = 'Boarmon';
+
+-- Blossom visited Stephanie Mendez on May 24th, 2020.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2020-05-24' FROM animals animal
+JOIN vets vet ON vet.name = 'Stephanie Mendez'
+WHERE animal.Name = 'Blossom';
+
+-- Blossom visited William Tatcher on Jan 11th, 2021.
+INSERT INTO visits
+SELECT animal.id, vet.id, '2021-01-11' FROM animals animal
+JOIN vets vet ON vet.name = 'William Tatcher'
+WHERE animal.Name = 'Blossom';
+
+
